@@ -30,8 +30,41 @@ features:
 
   - title: Per-column styles
     details: Styles defined in WxTableHeader override global table styles
-
 ---
+
+<script setup lang="ts">
+/* All comments in English */
+import { onMounted, nextTick } from 'vue'
+
+onMounted(async () => {
+  // Ensure DOM is ready before querying
+  await nextTick()
+
+  // Mark page for CSS that uses hero image as background
+  document.documentElement.setAttribute('data-hero-as-bg', '1')
+
+  // Grab hero elements
+  const heroImg = document.querySelector<HTMLImageElement>('.VPHomeHero .image .image-src')
+  const heroRoot = document.querySelector<HTMLElement>('.VPHomeHero')
+
+  if (heroImg && heroRoot) {
+    const src = heroImg.getAttribute('src') || ''
+    if (src) {
+      // Expose hero image URL via CSS var (used by custom styles)
+      heroRoot.style.setProperty('--hero-bg-url', `url("${src}")`)
+    }
+
+    // Replace inline <img> with transparent pixel and hide it from a11y tree
+    const transparentPx =
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAA' +
+      'AAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='
+
+    heroImg.setAttribute('src', transparentPx)
+    heroImg.setAttribute('alt', '')
+    heroImg.setAttribute('aria-hidden', 'true')
+  }
+})
+</script>
 
 ## Live demo
 
@@ -39,24 +72,3 @@ features:
 <ClientOnly>
   <LiveWxTableDemo />
 </ClientOnly>
-
- <script>
-
-    document.documentElement.setAttribute('data-hero-as-bg', '1');
-
-    const heroImg = document.querySelector('.VPHomeHero .image .image-src');
-    if (heroImg && heroImg.getAttribute('src')) {
-    const url = `url("${heroImg.getAttribute('src')}")`;
-    const heroRoot = document.querySelector('.VPHomeHero');
-    if (heroRoot) heroRoot.style.setProperty('--hero-bg-url', url);
-
-    const transparentPx =
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAA' +
-      'AAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=';
-    heroImg.setAttribute('src', transparentPx);
-    heroImg.setAttribute('alt', '');   
-    heroImg.setAttribute('aria-hidden', 'true');
-
-}
-
- </script>

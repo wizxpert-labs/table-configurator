@@ -1,13 +1,5 @@
 import {defineConfig} from 'vitepress'
 
-const GITHUB_USER = 'your-github-user'
-const GITHUB_REPO = 'table-configurator'
-
-const isCI = !!process.env.GITHUB_ACTIONS
-const hasCustomBase = !!process.env.DOCS_BASE
-const isUserOrgPages = GITHUB_REPO === `${GITHUB_USER}.github.io`
-
-const BASE = hasCustomBase ? process.env.DOCS_BASE! : (isUserOrgPages ? '/' : `/${GITHUB_REPO}/`)
 
 const SIDEBAR = [
     {
@@ -52,7 +44,7 @@ export default defineConfig({
     description: 'Vue 3 toolkit for PrimeVue (required) — columns visibility & order, px-only widths, column-level styles, and toggleable in-cell sub-fields.',
     lang: 'en-US',
     lastUpdated: true,
-    base: BASE,
+    base: '/',
     markdown: {
         theme: {
             light: 'github-light',
@@ -67,12 +59,12 @@ export default defineConfig({
             {text: 'Getting Started', link: '/getting-started'},
             {text: 'Guide', link: '/guide/basic-concepts'},
             {text: 'API', link: '/api/WxTableConfigurator'},
-            {text: 'GitHub', link: `https://github.com/${GITHUB_USER}/${GITHUB_REPO}`},
+            {text: 'GitHub', link: `https://github.com/wizxpert-labs/table-configurator`},
             {text: 'npm', link: 'https://www.npmjs.com/package/@wizxpert/table-configurator'}
         ],
         sidebar: SIDEBAR,
         socialLinks: [
-            {icon: 'github', link: `https://github.com/${GITHUB_USER}/${GITHUB_REPO}`}
+            {icon: 'github', link: `https://github.com/wizxpert-labs/table-configurator`}
         ],
         footer: {
             message: 'MIT OR Apache-2.0 Licensed',

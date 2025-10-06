@@ -55,6 +55,8 @@ const theme: Theme = {
     ...DefaultTheme,
 
     enhanceApp({ app }) {
+
+
         app.use(WxTableConfiguratorPlugin, { locale: 'en' })
         app.use(createPinia())
 

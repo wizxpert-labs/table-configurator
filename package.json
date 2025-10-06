@@ -4,19 +4,15 @@
     "description": "Configurable table toolkit for Vue 3 + PrimeVue",
     "type": "module",
     "license": "MIT OR Apache-2.0",
-    "main": "./dist/index.cjs",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs"
+            "import": "./src/index.ts"
         },
         "./package.json": "./package.json"
     },
     "files": [
-        "dist",
+        "index.ts",
+        "src",
         "README.md",
         "LICENSE-APACHE",
         "LICENSE-MIT",
@@ -36,12 +32,12 @@
         }
     },
     "devDependencies": {
-        "typescript": "^5.5.0",
-        "tsup": "^8.0.1",
         "@primevue/themes": "^4.3.9",
         "primeflex": "^4.0.0",
         "primeicons": "^7.0.0",
         "primevue": "^4.4.0",
+        "tsup": "^8.0.1",
+        "typescript": "^5.5.0",
         "vitepress": "^2.0.0-alpha.12",
         "vue": "^3.5.22"
     },
@@ -72,5 +68,8 @@
         "treetable",
         "configurator",
         "pinia"
-    ]
+    ],
+    "dependencies": {
+        "@wizxpert/table-configurator": "file:wizxpert-table-configurator-1.0.0.tgz"
+    }
 }
