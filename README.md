@@ -142,17 +142,16 @@ npm run docs:preview # preview static build
 
 ```
 .
-├─ docs/                         # VitePress site
-├─ demo/                         # Vite demo app
-├─ table-configurator/           # publishable package
-│  ├─ table-configurator/
-│  │  ├─ index.ts                # public entry (re-exports)
-│  │  └─ src/                    # components, store, composables, etc.
-│  ├─ LICENSE-MIT
-│  ├─ LICENSE-APACHE
-│  ├─ NOTICE
-│  └─ package.json               # ESM-only, raw TS + .vue exports
-└─ ...
+├─ docs/                       # VitePress site
+├─ demo/                      # Vite demo app
+├─ src/                       # package
+│  ├─ index.ts                # public entry (re-exports)
+│  └─ src/                    # components, store, composables, etc.
+├─  ...
+├─ LICENSE-MIT
+├─ LICENSE-APACHE
+├─ NOTICE
+└─ package.json
 ```
 
 
