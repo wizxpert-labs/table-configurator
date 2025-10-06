@@ -76,12 +76,7 @@ app.mount('#app')
         {code: 'P003', name: 'Pen', category: 'Office', price: 3}
     ])
     
-    const columns = [
-        {key: 'code', title: 'Code',},
-        {key: 'name', title: 'Name',},
-        {key: 'category', title: 'Category',},
-        {key: 'price', title: 'Price',}
-    ]
+    
 </script>
 
 
@@ -91,7 +86,7 @@ app.mount('#app')
     <div class="demo-layout">
         <!-- Table + Configurator -->
         <div class="table-area">
-            <WxTableConfigurator storageKey="ddd1">
+            <WxTableConfigurator storageKey="table.v1">
                 
                 <DataTable
                     :value="products"
@@ -143,7 +138,7 @@ app.mount('#app')
         
         <!-- Control Panel -->
         <div class="control-panel-area">
-            <WxTableControlPanel storage-key="ddd1"/>
+            <WxTableControlPanel storage-key="table.v1"/>
         </div>
     </div>
 ```
