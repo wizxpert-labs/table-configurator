@@ -142,7 +142,7 @@ npm run docs:preview # preview static build
 
 ```
 .
-├─ docs/                       # VitePress site
+├─ docs/                      # VitePress site
 ├─ demo/                      # Vite demo app
 ├─ src/                       # package
 │  ├─ index.ts                # public entry (re-exports)
