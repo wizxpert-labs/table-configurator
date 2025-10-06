@@ -27,31 +27,11 @@
         "vue": "^3.5.0"
     },
     "peerDependenciesMeta": {
-        "primeicons": {
-            "optional": true
-        }
+        "primeicons": { "optional": true }
     },
-    "devDependencies": {
-        "@primevue/themes": "^4.3.9",
-        "primeflex": "^4.0.0",
-        "primeicons": "^7.0.0",
-        "primevue": "^4.4.0",
-        "tsup": "^8.0.1",
-        "typescript": "^5.5.0",
-        "vitepress": "^2.0.0-alpha.12",
-        "vue": "^3.5.22"
-    },
+    "publishConfig": { "access": "public" },
     "scripts": {
-        "build": "tsup src/index.ts --dts --format esm,cjs --sourcemap --out-dir dist",
-        "clean": "rimraf dist",
-        "pack:dry": "npm pack --dry-run",
-        "prepublishOnly": "npm run build && npm run pack:dry",
-        "docs:dev": "vitepress dev docs",
-        "docs:build": "vitepress build docs",
-        "docs:preview": "vitepress preview docs"
-    },
-    "engines": {
-        "node": ">=18.0.0"
+        "pack:dry": "npm pack --dry-run"
     },
     "repository": {
         "type": "git",
@@ -61,15 +41,5 @@
         "url": "https://github.com/wizxpert-labs/table-configurator/issues"
     },
     "homepage": "https://wizxpert.net",
-    "keywords": [
-        "vue",
-        "primevue",
-        "datatable",
-        "treetable",
-        "configurator",
-        "pinia"
-    ],
-    "dependencies": {
-        "@wizxpert/table-configurator": "file:wizxpert-table-configurator-1.0.0.tgz"
-    }
+    "keywords": ["vue", "primevue", "datatable", "treetable", "configurator", "pinia"]
 }
