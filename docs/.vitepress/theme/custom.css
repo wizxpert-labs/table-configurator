@@ -1,0 +1,160 @@
+
+:root {
+    --shiki-color-text: #0b0c0e;        /* very dark text on light bg */
+    --shiki-color-background: #f7f8fa;  /* soft light bg with contrast */
+    --shiki-color-ansi: var(--shiki-color-text);
+
+    --shiki-token-keyword: #0d47a1;     /* deep blue */
+    --shiki-token-string:  #0a7f25;     /* rich green */
+    --shiki-token-function:#7b1fa2;     /* purple */
+    --shiki-token-constant:#b71c1c;     /* crimson */
+    --shiki-token-comment: #6b7280;     /* zinc-500 */
+    --shiki-token-punctuation:#111827;  /* zinc-900 */
+
+    --vp-code-editor-bg: var(--shiki-color-background);
+    --vp-code-editor-fg: var(--shiki-color-text);
+    --vp-code-editor-border: #c9ced6;   /* subtle border */
+    --vp-code-line-highlight: rgba(13, 71, 161, 0.10);  /* blue tint */
+    --vp-code-selection: rgba(13, 71, 161, 0.18);
+    --vp-code-scrollbar: rgba(17,24,39,.35);
+}
+
+.dark {
+    --shiki-color-text: #e6edf3;        /* GitHub dark text */
+    --shiki-color-background: #0b0c0e;  /* near-black */
+    --shiki-color-ansi: var(--shiki-color-text);
+
+    --shiki-token-keyword: #7aa2f7;     /* airy blue */
+    --shiki-token-string:  #9ece6a;     /* green */
+    --shiki-token-function:#c678dd;     /* purple */
+    --shiki-token-constant:#f7768e;     /* pink/red */
+    --shiki-token-comment: #9ca3af;     /* zinc-400 */
+    --shiki-token-punctuation:#e5e7eb;  /* zinc-200 */
+
+    --vp-code-editor-bg: var(--shiki-color-background);
+    --vp-code-editor-fg: var(--shiki-color-text);
+    --vp-code-editor-border: #2a2f37;
+    --vp-code-line-highlight: rgba(122,162,247,.14);
+    --vp-code-selection: rgba(122,162,247,.25);
+    --vp-code-scrollbar: rgba(229,231,235,.35);
+}
+
+.vp-doc pre.shiki,
+.vp-doc .vp-code {
+    background: var(--vp-code-editor-bg) !important;
+    color: var(--vp-code-editor-fg) !important;
+    border: 1px solid var(--vp-code-editor-border);
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    overflow: hidden;
+}
+
+.vp-doc pre.shiki code,
+.vp-doc .vp-code code {
+    display: block;
+    line-height: 1.6;
+    font-variant-ligatures: none;
+    caret-color: var(--vp-code-editor-fg);
+}
+
+.vp-doc pre.shiki ::selection,
+.vp-doc .vp-code ::selection {
+    background: var(--vp-code-selection);
+}
+
+.vp-doc pre.shiki .line.highlighted,
+.vp-doc .vp-code .line.highlighted {
+    background: var(--vp-code-line-highlight);
+    position: relative;
+}
+
+.vp-doc pre.shiki .line.highlighted::before,
+.vp-doc .vp-code .line.highlighted::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+    width: 3px;
+    background: currentColor;
+    opacity: .28;
+}
+
+.vp-doc .vp-code .copy,
+.vp-doc pre.shiki .copy {
+    opacity: 1 !important;
+    border: 1px solid var(--vp-code-editor-border);
+    background: transparent;
+    transition: transform .12s ease, background .12s ease;
+}
+.vp-doc .vp-code .copy:hover,
+.vp-doc pre.shiki .copy:hover {
+    transform: translateY(-1px);
+    background: rgba(0,0,0,.06);
+}
+.dark .vp-doc .vp-code .copy:hover,
+.dark .vp-doc pre.shiki .copy:hover {
+    background: rgba(255,255,255,.08);
+}
+
+.vp-doc :not(pre) > code {
+    background: color-mix(in srgb, var(--vp-code-editor-bg) 92%, transparent);
+    border: 1px solid var(--vp-code-editor-border);
+    color: var(--vp-code-editor-fg);
+    padding: .12rem .36rem;
+    border-radius: 8px;
+    font-size: .92em;
+}
+
+vp-doc .vp-code-group {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--vp-code-editor-border);
+}
+.vp-doc .vp-code-group .tabs {
+    background: color-mix(in srgb, var(--vp-code-editor-bg) 86%, transparent);
+    border-bottom: 1px solid var(--vp-code-editor-border);
+}
+
+.vp-doc pre.shiki::-webkit-scrollbar,
+.vp-doc .vp-code::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+.vp-doc pre.shiki::-webkit-scrollbar-thumb,
+.vp-doc .vp-code::-webkit-scrollbar-thumb {
+    background: var(--vp-code-scrollbar);
+    border-radius: 999px;
+}
+
+pre.shiki {
+    --shiki-token-keyword: var(--shiki-token-keyword);
+    --shiki-token-string: var(--shiki-token-string);
+    --shiki-token-function: var(--shiki-token-function);
+    --shiki-token-constant: var(--shiki-token-constant);
+    --shiki-token-comment: var(--shiki-token-comment);
+    --shiki-token-punctuation: var(--shiki-token-punctuation);
+}
+
+@media (max-width: 768px) {
+    .vp-doc pre.shiki,
+    .vp-doc .vp-code {
+        border-radius: 12px;
+    }
+}
+
+
+
+.VPHomeHero .image {
+    background-image: url('/sample.png');
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.VPHomeHero .image .image-src { display: none !important; }
+
+.vp-doc .req-required {
+    color: var(--vp-c-danger-1, #e11d48);
+    font-weight: 700;
+}
