@@ -68,46 +68,84 @@ app.mount('#app')
 ```vue
 <!-- App.vue -->
 <script setup lang="ts">
-    import { ref } from 'vue'
-    import DataTable from 'primevue/datatable'
-    import Column from 'primevue/column'
+    import {ref} from 'vue'
     
-    import {
-        WxTableConfigurator,
-        WxTableHeader,
-        WxTableControlPanel,
-        WxTableCell
-    } from '@wizxpert/table-configurator'
-    
-    const storageKey = 'demo.inventory.v1'
-    const rows = ref([
-        { id: 1, name: 'Item A', qty: 12 },
-        { id: 2, name: 'Item B', qty: 3 }
+    const products = ref([
+        {code: 'P001', name: 'Chair', category: 'Furniture', price: 120},
+        {code: 'P002', name: 'Keyboard', category: 'Electronics', price: 40},
+        {code: 'P003', name: 'Pen', category: 'Office', price: 3}
     ])
+    
+    const columns = [
+        {key: 'code', title: 'Code',},
+        {key: 'name', title: 'Name',},
+        {key: 'category', title: 'Category',},
+        {key: 'price', title: 'Price',}
+    ]
 </script>
 
+
 <template>
-    <WxTableControlPanel :storageKey="storageKey" class="mb-3" />
     
-    <WxTableConfigurator :storageKey="storageKey">
-        <DataTable :value="rows">
-            <template #header>
-                <WxTableHeader :storageKey="storageKey" />
-            </template>
-            
-            <Column field="id" header="ID" />
-            <Column field="name" header="Name" />
-            <Column field="qty" header="Qty">
-                <template #body="{ data }">
-                    <WxTableCell :row="data" column-key="qty">
-                        <template #default="{ row }">{{ row.qty }}</template>
-                        <template #Delta="{ row }">(+2 today)</template>
-                    </WxTableCell>
-                </template>
-            </Column>
-        </DataTable>
-    </WxTableConfigurator>
-</template>
+    
+    <div class="demo-layout">
+        <!-- Table + Configurator -->
+        <div class="table-area">
+            <WxTableConfigurator storageKey="ddd1">
+                
+                <DataTable
+                    :value="products"
+                    show-gridlines
+                    :reorderableColumns="true"
+                >
+                    <Column field="code" column-key="code" class="p-0">
+                        <template #header>
+                            <WxTableHeader header="Code"/>
+                        </template>
+                        <template #body="{ data }">
+                            
+                            <WxTableCell :row="data">
+                                
+                                <template #default="{ row }">
+                                    {{ row.code }}
+                                </template>
+                                <template #Name="{ row }">
+                                    <span class="text-xs font-bold">{{ row.name }}</span>
+                                </template>
+                                <template #Category="{ row }">
+                                    <span class="text-xs">{{ row.category }}</span>
+                                </template>
+                                <template #Price="{ row }">
+                                    <span class="text-xs">{{ row.price }}</span>
+                                </template>
+                            
+                            </WxTableCell>
+                        </template>
+                    </Column>
+                    <Column field="name" columnKey="name">
+                        <template #header>
+                            <WxTableHeader header="Name"/>
+                        </template>
+                    </Column>
+                    <Column field="category" columnKey="category">
+                        <template #header>
+                            <WxTableHeader header="Category"/>
+                        </template>
+                    </Column>
+                    <Column field="price" columnKey="price">
+                        <template #header>
+                            <WxTableHeader header="Price"/>
+                        </template>
+                    </Column>
+                </DataTable>
+            </WxTableConfigurator>
+        </div>
+        
+        <!-- Control Panel -->
+        <div class="control-panel-area">
+            <WxTableControlPanel storage-key="ddd1"/>
+        </div>
+    </div>
 ```
 
 ---
