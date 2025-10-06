@@ -27,11 +27,17 @@
         "vue": "^3.5.0"
     },
     "peerDependenciesMeta": {
-        "primeicons": { "optional": true }
+        "primeicons": {
+            "optional": true
+        }
     },
-    "publishConfig": { "access": "public" },
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
-        "pack:dry": "npm pack --dry-run"
+        "pack:dry": "npm pack --dry-run",
+        "docs:build": "vitepress build ../docs",
+        "docs:preview": "vitepress preview ../docs"
     },
     "repository": {
         "type": "git",
@@ -41,5 +47,12 @@
         "url": "https://github.com/wizxpert-labs/table-configurator/issues"
     },
     "homepage": "https://wizxpert.net",
-    "keywords": ["vue", "primevue", "datatable", "treetable", "configurator", "pinia"]
+    "keywords": [
+        "vue",
+        "primevue",
+        "datatable",
+        "treetable",
+        "configurator",
+        "pinia"
+    ]
 }
