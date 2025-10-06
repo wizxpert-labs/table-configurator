@@ -46,7 +46,6 @@ npm i @wizxpert/table-configurator
 
 ```ts
 // main.ts (Vue 3)
-// All comments in English
 import {createApp} from 'vue'
 import {createPinia} from 'pinia'
 import PrimeVue from 'primevue/config'
@@ -69,7 +68,6 @@ app.mount('#app')
 ```vue
 <!-- App.vue -->
 <script setup lang="ts">
-    // All comments in English
     import { ref } from 'vue'
     import DataTable from 'primevue/datatable'
     import Column from 'primevue/column'
