@@ -105,8 +105,11 @@ app.use(PrimeVue, {
 // 3) Table Configurator plugin (yes — pass options here)
 // [!code ++]
 app.use(WxTableConfiguratorPlugin, {
+  // [!code ++]
   locale: 'uk',   // 'en' is default; set to your preferred locale
+  // [!code ++]
   // warmup: false // uncomment to skip pre-initialization if you need
+  // [!code ++]
 })
 
 app.mount('#app')
@@ -115,8 +118,9 @@ app.mount('#app')
 
 ## Option 2: Try a demo project
 ```bash
-git clone https://github.com/wizxpert/table-configurator-demo
-cd table-configurator-demo
+git clone https://github.com/wizxpert-labs/table-configurator
+cd table-configurator
+cd demo
 npm install
 npm run dev
 ```
