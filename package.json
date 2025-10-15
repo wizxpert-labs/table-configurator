@@ -1,6 +1,6 @@
 {
     "name": "@wizxpert/table-configurator",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Configurable table toolkit for Vue 3 + PrimeVue",
     "type": "module",
     "license": "MIT OR Apache-2.0",
@@ -36,8 +36,8 @@
     },
     "scripts": {
         "pack:dry": "npm pack --dry-run",
-        "docs:build": "vitepress build ../docs",
-        "docs:preview": "vitepress preview ../docs"
+        "docs:build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs"
     },
     "repository": {
         "type": "git",

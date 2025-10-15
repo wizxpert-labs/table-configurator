@@ -2,9 +2,9 @@
 
 > Vue 3 toolkit for PrimeVue 4.x — persistent column visibility & order, px-only widths, per-column styles, and toggleable in-cell sub-fields
 
-- **Library**: `@wizxpert/table-configurator` (ESM-only, ships raw TS + `.vue`)
-- **Docs**: VitePress site inside `/docs`
-- **Demo**: Vite dev server inside `/demo`
+- **Library**: `@wizxpert/table-configurator` (ESM-only, ships raw `.ts` + `.vue`)
+- **Docs**: [Documentation site](https://wizxpert.net)
+- **Repository**: [GitHub › wizxpert-labs/table-configurator](https://github.com/wizxpert-labs/table-configurator)
 - **License**: MIT OR Apache-2.0
 
 ---
